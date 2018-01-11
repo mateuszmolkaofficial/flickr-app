@@ -1,0 +1,24 @@
+<section class="main-container">
+  <section class="profiles-list">
+      <div class="profile" 
+           *ngFor="let profile of profiles; let last = last" 
+           routerLink="/profile-view">
+        <div class="profile-image-section" [class.last-item]="last">
+          <img src="{{profile.media.m}}" alt="">
+        </div> 
+        <div class="profile-info-section" [class.last-item]="last">
+          <h3 class="photo-title" *ngIf="profile.title !==' '">{{profile.title}}</h3>
+          <h3 class="photo-title" *ngIf="profile.title ===' '">No title</h3>
+          <div class="detail-info">
+            <p>Published: {{profile.date_taken.days}}</p>
+            <div class="links">
+              <a href="{{'https://www.flickr.com/photos/' + profile.author_id}}" (click)="preventComponentLoad($event)">Photo author</a>
+              <br>
+              <a href="{{profile.link}}" (click)="preventComponentLoad($event)">View on Flickr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</section>
+
