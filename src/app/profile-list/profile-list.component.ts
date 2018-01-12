@@ -1,28 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Profile } from '../interfaces/profile'
+import { ProfileService } from '../services/profile.service';
+
 @Component({
   selector: 'app-profile-list',
   templateUrl: './profile-list.component.html',
   styleUrls: ['./profile-list.component.scss']
 })
 export class ProfileListComponent implements OnInit {
-  public profiles: Array<Profile>;
-  constructor(private http: HttpClient) { }
+  private profiles: Array<Profile>;
+  private timer;
+  constructor(private http: HttpClient,
+              private profileService: ProfileService) { }
 
   ngOnInit() {
-    const apiUrl = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSONP_CALLBACK'
+    this.profileService.get()
+      .subscribe(profiles => {
+        
+        this.profiles = profiles.items;
+        console.log(this.profiles);
+      })
 
-    this.http.jsonp(apiUrl, 'JSONP_CALLBACK')
-      .subscribe(
-        (res: any) => {
-          this.profiles = res.items;
-          console.log(this.profiles);
-        },
-        err => {
-          console.log(err);
-        }
-      )
+  }
+
+  searchFunction($event) {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.profileService.get($event)
+        .subscribe( profiles => {
+          this.profiles = profiles.items;
+        })
+    }, 750)
   }
 
   preventComponentLoad($event) {

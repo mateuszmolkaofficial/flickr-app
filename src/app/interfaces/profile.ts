@@ -1,4 +1,4 @@
-interface Profile {
+export interface Profile {
   author: string;
   author_id: string;
   date_taken: string;

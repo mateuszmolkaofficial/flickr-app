@@ -6,6 +6,7 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { ProfileService } from './services/profile.service';
 
 const appRoutes: Routes = [
   { path: 'profile-list', component: ProfileListComponent },
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
     HttpClientJsonpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 <section class="main-container">
+  <input type="text" (input)="searchFunction($event.target.value)">
   <section class="profiles-list">
       <div class="profile" 
            *ngFor="let profile of profiles; let last = last" 
