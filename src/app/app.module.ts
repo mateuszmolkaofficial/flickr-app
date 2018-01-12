@@ -9,10 +9,10 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { ProfileService } from './services/profile.service';
 
 const appRoutes: Routes = [
-  { path: 'profile-list', component: ProfileListComponent },
-  { path: 'profile-view', component: ProfileViewComponent },
-  { path: '', redirectTo: 'profile-list', pathMatch: 'full' },
-  { path: '**', redirectTo: 'profile-list', pathMatch: 'full' }
+  { path: 'profile', component: ProfileListComponent },
+  { path: 'profile/:index', component: ProfileViewComponent },
+  { path: '', redirectTo: 'profile', pathMatch: 'full' },
+  { path: '**', redirectTo: 'profile', pathMatch: 'full' }
 ];
 
 @NgModule({
