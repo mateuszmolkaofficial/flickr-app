@@ -1,5 +1,5 @@
 <section class="main-container">
-  <input type="text" (input)="searchFunction($event.target.value)">
+  <input type="text" (input)="searchFunction($event.target.value)" placeholder="Search by tags">
   <section class="profiles-list">
       <div class="profile" 
            *ngFor="let profile of profiles; let last = last" 
@@ -11,7 +11,7 @@
           <h3 class="photo-title" *ngIf="profile.title !==' '">{{profile.title}}</h3>
           <h3 class="photo-title" *ngIf="profile.title ===' '">No title</h3>
           <div class="detail-info">
-            <p>Published: {{profile.date_taken.days}}</p>
+            <p>Published: {{profile.published | date: 'd MMM y'}} at {{profile.published | date: 'h:mm:ss a'}}</p>
             <div class="links">
               <a href="{{'https://www.flickr.com/photos/' + profile.author_id}}" (click)="preventComponentLoad($event)">Photo author</a>
               <br>
