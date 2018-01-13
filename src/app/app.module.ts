@@ -8,6 +8,10 @@ import { ProfileListComponent } from './profile-list/profile-list.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { ProfileService } from './services/profile.service';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { profiles } from './reducers/profile.reducer';
+
 const appRoutes: Routes = [
   { path: 'profile-list', component: ProfileListComponent },
   { path: 'profile-view', component: ProfileViewComponent },
@@ -25,6 +29,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule, 
     HttpClientJsonpModule,
+    StoreModule.forRoot({profiles}),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ProfileService],

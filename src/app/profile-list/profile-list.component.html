@@ -1,9 +1,9 @@
 <section class="main-container">
-  <input type="text" (input)="searchFunction($event.target.value)" placeholder="Search by tags">
+  <input type="text" (keydown)="searchFunction($event.target.value)" placeholder="Search by tags">
   <section class="profiles-list">
       <div class="profile" 
-           *ngFor="let profile of profiles; let last = last" 
-           routerLink="/profile-view">
+           *ngFor="let profile of profiles; let index = indexlet last = last" 
+           [routerLink]="['/profile-view', index]">
         <div class="profile-image-section" [class.last-item]="last">
           <img src="{{profile.media.m}}" alt="">
         </div> 
