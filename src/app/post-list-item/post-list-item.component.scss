@@ -1,17 +1,19 @@
 @import "../../global-styles/variables";
+@import "../../global-styles/mixins";
+
+:host {
+  width: 100%;
+  height: $image-heigth;
+  position: relative;
+}
 
 .post-image-section {
   width: $image-width;
-  height: 100%;
+  height: $image-heigth;
   overflow: hidden;
   border: 3px solid $black;
   position: absolute;
-  display: inline-block;
   border-bottom: 0;
-
-  &.last-item {
-    border-bottom: 3px solid $black;
-  }
 
   img {
     position: absolute;
@@ -19,18 +21,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  @include respond-to (700px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .post-info-section {
-  margin-left: 170px;
-  height: 100%;
+  margin-left: $image-width;
+  height: $image-heigth;
   padding: 10px;
-  border: 3px solid $grey;
+  border: $border-size solid $grey;
   border-left: none;
   border-bottom: 0;
 
   &.last-item {
     border-bottom: 3px solid $grey;
+  }
+
+  p {
+    margin: 0;
   }
 
   h3 {

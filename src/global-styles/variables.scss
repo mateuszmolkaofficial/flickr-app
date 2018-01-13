@@ -1,11 +1,32 @@
+// Breakpoints
+$mobile-big: 400px;
+$tablet: 800px;
+$desktop: 1100px;
+
 // Colours
 $white: #fff;
 $black: #000;
 $grey: #d3d3d3;
 $blue: #0000ff;
 
+// Dimensions
+$max-container-width: 960px;
+
+// Borders
 $border-size: 3px;
+$border-total: 2 * $border-size;
+
+// Image sizes
 $image-width: 170px;
-$nominal-heigth: 150px;
+$image-heigth: $image-width * 0.8;
+
+// Font sizes
+$minimum-font-size:14px;
+$font-size: $minimum-font-size;
+$mobile-big-size: $minimum-font-size + 1px;
+$tablet-size: $minimum-font-size + 2px;
+$desktop-size: $minimum-font-size + 3px;
+
 // Fonts
 $main-font: Courier New, Courier, monospace;
+

@@ -1,7 +1,12 @@
 @import "../../global-styles/variables";
+.main-container {
+  max-width: 960px;
+  margin: auto;
+}
 
 .search-input {
   width: 100%;
+  max-width: 960px;
   height: 3em;
   font-size: 1.5em;
   position: fixed;
@@ -9,16 +14,10 @@
   background-color: $white;
   z-index: 999;
   top:0;
+  margin: auto;
   border: 2px solid $grey;
 }
 
 .post-list {
   margin-top: 4.5em;
-}
-
-.post {
-  width: 100%;
-  height: 150px;
-  height: $nominal-heigth;
-  position: relative;
 }
