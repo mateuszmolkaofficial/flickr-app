@@ -9,7 +9,7 @@ import { AppStore } from '../app.store';
 
 @Injectable()
 export class ProfileService {
-
+  private internalProfileStorage: Array<Profile>;
   private apiUrl = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSONP_CALLBACK'
 
   profiles: Observable<Array<Profile>>;
