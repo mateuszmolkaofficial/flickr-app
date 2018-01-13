@@ -2,10 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Profile } from '../interfaces/profile'
 import { ProfileService } from '../services/profile.service';
-<<<<<<< HEAD
 import { Observable } from 'rxjs/Observable';
-=======
->>>>>>> 47300c14080ef36e5957ac107a0d58de00c5d982
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
