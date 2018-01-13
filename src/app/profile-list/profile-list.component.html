@@ -2,8 +2,8 @@
   <input type="text" (keydown)="searchFunction($event.target.value)" placeholder="Search by tags">
   <section class="profiles-list">
       <div class="profile" 
-           *ngFor="let profile of profiles; let index = indexlet last = last" 
-           [routerLink]="['/profile-view', index]">
+           *ngFor="let profile of profiles; let index = index; let last = last" 
+           [routerLink]="['/profile', index]">
         <div class="profile-image-section" [class.last-item]="last">
           <img src="{{profile.media.m}}" alt="">
         </div> 

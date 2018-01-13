@@ -17,22 +17,17 @@ export class ProfileListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private timer;
 
-  constructor(private http: HttpClient,
-              private profileService: ProfileService
-             ) {
-              this.profilesObservable = profileService.profiles;
-             }
+  constructor(private profileService: ProfileService) {
+    this.profilesObservable = profileService.profiles;
+  }
 
   ngOnInit() {
     this.subscription = this.profilesObservable
-        .subscribe(
-            profiles => {
-              this.profiles = profiles;
-            },
-            error => {
-              console.log('error')
-            }
-        );
+      .subscribe( profiles => {
+        this.profiles = profiles;
+      }, error => {
+        console.log('Error!')
+      });
     if (this.profiles.length === 0) {
       this.profileService.loadProfiles()
     }
