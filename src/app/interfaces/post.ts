@@ -1,4 +1,4 @@
-export interface Profile {
+export interface Post {
   author: string;
   author_id: string;
   date_taken: string;

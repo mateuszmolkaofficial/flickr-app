@@ -1,6 +1,5 @@
-import { Profile } from './interfaces/profile';
+import { Post } from './interfaces/post';
 
 export interface AppStore {
-  profiles: Array<Profile>;
-  selectedProfile: Profile
+  posts: Array<Post>
 }

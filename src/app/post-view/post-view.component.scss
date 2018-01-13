@@ -1,0 +1,37 @@
+@import "../../global-styles/variables";
+
+.post-view {
+  padding: 1.5em;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    width: 80%;
+
+    h2 {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+      color: $blue;
+      white-space: nowrap;
+    }
+  }
+}
+
+.info-section {
+  margin: 1em 0;
+  display: flex;
+  
+  p {
+    margin: 0;
+  }
+
+  .separator {
+    margin: 0 0.5em;
+  }
+}

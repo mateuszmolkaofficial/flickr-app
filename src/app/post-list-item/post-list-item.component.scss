@@ -1,32 +1,6 @@
 @import "../../global-styles/variables";
 
-$border-size: 3px;
-$image-width: 170px;
-$nominal-heigth: 150px;
-
-.search-input {
-  width: 100%;
-  height: 3em;
-  font-size: 1.5em;
-  position: fixed;
-  padding: 0.5em;
-  background-color: $white;
-  z-index: 999;
-  top:0;
-  border: 2px solid $grey;
-}
-
-.profiles-list {
-  margin-top: 4.5em;
-}
-.profile {
-  width: 100%;
-  height: 150px;
-  height: $nominal-heigth;
-  position: relative;
-}
-
-.profile-image-section {
+.post-image-section {
   width: $image-width;
   height: 100%;
   overflow: hidden;
@@ -47,7 +21,7 @@ $nominal-heigth: 150px;
   }
 }
 
-.profile-info-section {
+.post-info-section {
   margin-left: 170px;
   height: 100%;
   padding: 10px;

@@ -1,0 +1,17 @@
+<div *ngIf="post" class="post-view">
+  <div class="header-section">
+    <a href="{{'https://www.flickr.com/photos/' + post.author_id}}">
+      <h2 *ngIf="post.title !==' '">{{post.title}}</h2>
+      <h2 *ngIf="post.title ===' '">No title</h2>
+    </a>
+    <button routerLink="/posts">Back</button>
+  </div>
+  <div class="info-section">
+    <a href="{{post.link}}">Photo author</a>
+    <p class="separator">|</p>
+    <p>Published: {{post.published | date: 'd MMM y'}} at {{post.published | date: 'h:mm:ss a'}}</p>
+  </div>
+  <div class="post-image-section">
+    <img src="{{post.media.m}}" alt="">
+  </div> 
+</div>

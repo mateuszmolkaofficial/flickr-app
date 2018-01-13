@@ -1,0 +1,11 @@
+<section class="main-container">
+  <input class="search-input" type="text" (keydown)="searchFunction($event.target.value)" placeholder="Search by tags">
+  <section class="post-list">
+    <div class="post" 
+         *ngFor="let post of posts; let index = index; let last = last" 
+         [routerLink]="['/posts', index]">
+      <app-post-list-item [post]="post"></app-post-list-item>
+    </div>
+  </section>
+</section>
+

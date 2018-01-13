@@ -4,35 +4,39 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ProfileListComponent } from './profile-list/profile-list.component';
-import { ProfileViewComponent } from './profile-view/profile-view.component';
-import { ProfileService } from './services/profile.service';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostViewComponent } from './post-view/post-view.component';
+import { PostService } from './services/post.service';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
-import { profiles } from './reducers/profile.reducer';
+import { posts } from './reducers/posts.reducer';
+import { PostListItemComponent } from './post-list-item/post-list-item.component';
+
+
 
 const appRoutes: Routes = [
-  { path: 'profile', component: ProfileListComponent },
-  { path: 'profile/:index', component: ProfileViewComponent },
-  { path: '', redirectTo: 'profile', pathMatch: 'full' },
-  { path: '**', redirectTo: 'profile', pathMatch: 'full' }
+  { path: 'posts', component: PostListComponent },
+  { path: 'posts/:index', component: PostViewComponent },
+  { path: '', redirectTo: 'posts', pathMatch: 'full' },
+  { path: '**', redirectTo: 'posts', pathMatch: 'full' }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileListComponent,
-    ProfileViewComponent
+    PostListComponent,
+    PostViewComponent,
+    PostListItemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule, 
     HttpClientJsonpModule,
-    StoreModule.forRoot({profiles}),
+    StoreModule.forRoot({posts}),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProfileService],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
