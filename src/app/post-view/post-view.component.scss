@@ -1,4 +1,10 @@
 @import "../../global-styles/variables";
+@import "../../global-styles/mixins";
+
+.post-container {
+  max-width: $max-container-width;
+  margin: auto;
+}
 
 .post-view {
   padding: 1.5em;
@@ -7,12 +13,18 @@
 .header-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   a {
     text-decoration: none;
-    width: 80%;
+    width: 70%;
+
+    @include respond-to($mobile-big){
+      width: 80%;
+    }
 
     h2 {
+      font-size: 1.6em;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -20,6 +32,32 @@
       color: $blue;
       white-space: nowrap;
     }
+  }
+}
+
+.back-button {
+  background-color: $white;
+  border: 1px $blue solid;
+  border-left: none;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: $blue;
+  color: $white;
+  font-size: $desktop-size;
+  padding: 0.2em;
+  height: 2em;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    left: -1.9em;
+    border-color: transparent #0000ff transparent transparent;
+    border-width: 0.95em;
   }
 }
 
@@ -31,7 +69,8 @@
     margin: 0;
   }
 
-  .separator {
-    margin: 0 0.5em;
+  .vertical-line {
+    border-left: 1px $black solid;
+    margin: 0 1em;
   }
 }

@@ -4,12 +4,9 @@
 <div class="post-info-section" [class.last-item]="last">
   <h3 class="photo-title" *ngIf="post.title !==' '">{{post.title}}</h3>
   <h3 class="photo-title" *ngIf="post.title ===' '">No title</h3>
-  <div class="detail-info">
-    <p>Published: {{post.published | date: 'd MMM y'}} at {{post.published | date: 'h:mm:ss a'}}</p>
-    <div class="links">
-      <a href="{{'https://www.flickr.com/photos/' + post.author_id}}" (click)="preventComponentLoad($event)">Photo author</a>
-      <br>
-      <a href="{{post.link}}" (click)="preventComponentLoad($event)">View on Flickr</a>
-    </div>
+  <div class="post-info-wrapper">
+    <p class="photo-date">Published: {{post.published | date: 'd MMM y'}} at {{post.published | date: 'h:mm:ss a'}}</p>
+    <a class="photo-author" href="{{'https://www.flickr.com/photos/' + post.author_id}}" (click)="$event.stopPropagation();">Photo author</a>
+    <a class="photo-link" href="{{post.link}}" (click)="$event.stopPropagation();">View on Flickr</a>
   </div>
 </div>

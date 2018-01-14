@@ -42,8 +42,4 @@ export class PostListComponent implements OnInit, OnDestroy {
       this.postService.loadPosts($event)
     }, 750)
   }
-
-  preventComponentLoad($event) {
-    $event.stopPropagation();
-  }
 }

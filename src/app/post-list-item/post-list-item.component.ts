@@ -13,7 +13,7 @@ export class PostListItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.post)
+
   }
 
 }

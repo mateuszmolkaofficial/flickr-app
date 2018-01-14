@@ -3,10 +3,18 @@
 
 :host {
   width: 100%;
-  height: $image-heigth;
   position: relative;
 }
 
+:host.last {
+  .post-image-section{
+    border-bottom: $border-size solid $black;
+  }
+
+  .post-info-section{
+    border-bottom: $border-size solid $grey;
+  }
+}
 .post-image-section {
   width: $image-width;
   height: $image-heigth;
@@ -21,11 +29,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  @include respond-to (700px) {
-    width: 20px;
-    height: 20px;
-  }
 }
 
 .post-info-section {
@@ -35,21 +38,63 @@
   border: $border-size solid $grey;
   border-left: none;
   border-bottom: 0;
-
-  &.last-item {
-    border-bottom: 3px solid $grey;
-  }
-
-  p {
-    margin: 0;
-  }
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 
   h3 {
+    font-size:1.1em;
     margin: 0;
     color: $blue;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @include respond-to($mobile-big){
+      font-size:1.4em;
+    }
   }
+
+  .post-info-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    p, a {
+      margin: 0.1em 0;
+
+      @include respond-to($mobile-big){
+        margin: 0.4em 0.1em 0.4em 0;
+      }
+    }
+
+    .photo-date {
+      width: 100%;
+    }
+
+    @include respond-to($tablet){
+      flex-wrap: nowrap;
+
+      .photo-date {
+        order: 1;
+        width: auto;
+        margin-left: 0em;
+        margin-right: 1em;
+      }
+
+      .photo-link {
+        order: 1;
+      }
+
+      .photo-author {
+        margin-right: 1em;
+      }
+    }
+  }
+}
+
+.detail-info {
+  display: flex;
+  flex-wrap: wrap;
 }
