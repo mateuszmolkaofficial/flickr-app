@@ -11,7 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tech stack
 
-Tech stack: Angular5, Redux, SCSS
+Angular5, Redux, SCSS
 
 ## Tests
 
