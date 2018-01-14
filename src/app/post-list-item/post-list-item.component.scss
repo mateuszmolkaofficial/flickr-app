@@ -73,6 +73,12 @@
       width: 100%;
     }
 
+    @include respond-to($mobile-big){
+      .photo-author {
+        margin-right: 1em;
+      }
+    }
+
     @include respond-to($tablet){
       flex-wrap: nowrap;
 
@@ -85,10 +91,6 @@
 
       .photo-link {
         order: 1;
-      }
-
-      .photo-author {
-        margin-right: 1em;
       }
     }
   }

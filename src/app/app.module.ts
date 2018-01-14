@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { posts } from './reducers/posts.reducer';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
+import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
 
 
 
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     PostListComponent,
     PostViewComponent,
-    PostListItemComponent
+    PostListItemComponent,
+    LoadingAnimationComponent
   ],
   imports: [
     BrowserModule,

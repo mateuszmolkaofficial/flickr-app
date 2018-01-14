@@ -21,11 +21,12 @@ export class PostService {
   }
   
   loadPosts(tagsSearch?) {
+    let url = this.apiUrl;
     if (tagsSearch) {
-      this.apiUrl = this.apiUrl + '&tags=' + tagsSearch
+      url = this.apiUrl + '&tags=' + tagsSearch
     }
 
-    return this.http.jsonp(this.apiUrl, 'JSONP_CALLBACK')
+    return this.http.jsonp(url, 'JSONP_CALLBACK')
       .subscribe((res: any) => {
         let postsArray: Array<Post> =  res.items;
         this.store.dispatch({type: 'ADD_POSTS', payload: postsArray});

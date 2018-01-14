@@ -21,6 +21,7 @@ export class PostViewComponent implements OnInit, OnDestroy {
   private postIndex: number;
 
   private post: Post;
+  private tags: Array<string>;
 
   constructor(
     private route: ActivatedRoute, 
@@ -43,7 +44,6 @@ export class PostViewComponent implements OnInit, OnDestroy {
     if (this.posts.length === 0) {
       this.router.navigate(['post']);
     }
-   
     this.post = this.posts[this.postIndex];
   }
 

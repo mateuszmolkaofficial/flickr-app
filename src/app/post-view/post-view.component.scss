@@ -39,7 +39,7 @@
   background-color: $white;
   border: 1px $blue solid;
   border-left: none;
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: bold;
   background-color: $blue;
   color: $white;
@@ -55,7 +55,7 @@
     width: 0;
     height: 0;
     border-style: solid;
-    left: -1.9em;
+    left: -1.87em;
     border-color: transparent #0000ff transparent transparent;
     border-width: 0.95em;
   }
@@ -73,4 +73,51 @@
     border-left: 1px $black solid;
     margin: 0 1em;
   }
+}
+
+.content-img {
+  width: 100%;
+
+  @include respond-to($tablet){
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  img {
+    display:block;
+    margin: 0 auto;
+    max-width: 100%;
+
+    @include respond-to($tablet){
+      margin: 0;
+    }
+  }
+}
+
+.content-text {
+  padding: 1em 0;
+
+  @include respond-to($tablet){
+    padding: 0 10px;
+    width: 65%;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+  } 
+}
+
+.content-tags-intro {
+  display: inline-block;
+}
+
+.content-tags {
+  display: inline-block;
+  color: $blue;
+  text-decoration: underline;
+  margin: 0 0.5em 1em 0;
 }

@@ -12,8 +12,16 @@
       <div class="vertical-line"></div>
       <p>Published: {{post.published | date: 'd MMM y'}} at {{post.published | date: 'h:mm:ss a'}}</p>
     </div>
-    <div class="post-image-section">
-      <img src="{{post.media.m}}" alt="">
+    <div class="post-content-section">
+      <div class="content-img">
+        <img src="{{post.media.m}}" alt="">
+      </div>
+      <div class="content-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus molestias fugiat inventore aut iusto facilis est, dolore error necessitatibus, repellendus laudantium porro veniam voluptate excepturi sint dolores possimus sapiente asperiores?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus molestias fugiat inventore aut iusto facilis est, dolore error necessitatibus, repellendus laudantium porro veniam voluptate excepturi sint dolores possimus sapiente asperiores?</p>   
+        <p class="content-tags-intro" >Tags:</p>
+        <a class="content-tags" *ngFor="let tag of post.tags.split(' ')">{{tag}}</a>
+      </div>
     </div> 
   </div>
 </div>

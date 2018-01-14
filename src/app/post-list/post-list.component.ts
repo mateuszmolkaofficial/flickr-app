@@ -17,6 +17,8 @@ export class PostListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private timer;
 
+  private loadingStatus = 'loading';
+
   constructor(private postService: PostService) {
     this.postsObservable = postService.posts;
   }
@@ -25,11 +27,12 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.subscription = this.postsObservable
       .subscribe( posts => {
         this.posts = posts;
+        if (this.posts.length === 0) {
+          this.postService.loadPosts();
+        } else {
+          this.loadingStatus = 'ready';
+        }
       })
-      
-    if (this.posts.length === 0) {
-      this.postService.loadPosts()
-    }
   }
 
   ngOnDestroy() {
@@ -39,7 +42,9 @@ export class PostListComponent implements OnInit, OnDestroy {
   searchFunction($event) {
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
-      this.postService.loadPosts($event)
-    }, 750)
+      this.loadingStatus = 'loading';
+      this.posts = [];
+      this.postService.loadPosts($event);
+    }, 500)
   }
 }
